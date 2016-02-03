@@ -1,6 +1,14 @@
 #ifndef LEXER_H
 #define LEXER_H
 
+typedef struct token_tree {
+    int child_count;              //The number of child trees that are hanging off of this node
+    char* rule_type;            //The rule that was matched to make this node 
+    char* value;                //The actual characters matched 
+    struct token_tree* parent;    //
+    struct token_tree* children;
+} token_tree;
+
 typedef struct LexerRule {
     char* name;
     char* rule;

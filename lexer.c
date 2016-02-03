@@ -3,14 +3,6 @@
 #include "list.h"
 #include "lexer.h"
 
-typedef struct token_tree {
-    int child_count;              //The number of child trees that are hanging off of this node
-    char* rule_type;            //The rule that was matched to make this node 
-    char* value;                //The actual characters matched 
-    struct token_tree* parent;    //
-    struct token_tree* children;
-} token_tree;
-
 //Given a parent, allocates, attaches and returns a new child
 token_tree* tt_add_child(token_tree* parent_root) {
     
