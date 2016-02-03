@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <memory.h>
 #include "list.h"
+#include "lexer.h"
 
 typedef struct token_tree {
     int child_count;              //The number of child trees that are hanging off of this node
