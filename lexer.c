@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <memory.h>
+#include "List.h"
+
 typedef struct token_tree {
     int child_count;              //The number of child trees that are hanging off of this node
     string* rule_type;            //The rule that was matched to make this node 
@@ -16,17 +20,44 @@ typedef struct LexerRule {
     char* rule;
 } LexerRule;
 
+List* lexer_rules = (List*)0;
+
 int lexer_init() {
     
     LexerRule* rule;
-    List* lexer_rules = List_new();
+    lexer_rules = List_new();
     
     if(!lexer_rules)
+        return 0;
     
-    List_for_each(lexer_rules, rule, LexerRule*) {
+    return 1;
+}
+
+int lexer_add_rule(char* name, char* rule) {
+    
+    LexerRule* new_rule;
+    
+    if(!lexer_rules)
+        return 0;
         
-        rule->
-    }
+    new_rule = (LexerRule*)malloc(sizeof(LexerRule));
+    
+    if(!new_rule)
+        return 0;
+        
+    new_rule->name = name;
+    new_rule->rule = rule;
+    
+    return List_add(lexer_rules, new_rule);
+}
+
+void lexer_print_rules(void) {
+    
+    LexerRule* rule;
+    int i = 0;
+    
+    List_for_each(lexer_rules, rule, LexerRule*)
+        printf("lexer_rules['%s']: %s\n", rule->name, rule->rule);
 }
 
 token_tree* lexer_run(char* input_string) {
