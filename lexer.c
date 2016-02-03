@@ -49,7 +49,6 @@ int lexer_add_rule(char* name, char* rule) {
 void lexer_print_rules(void) {
     
     LexerRule* rule;
-    int i = 0;
     
     List_for_each(lexer_rules, rule, LexerRule*)
         printf("lexer_rules['%s']: %s\n", rule->name, rule->rule);
