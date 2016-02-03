@@ -27,6 +27,6 @@ inline int List_has_next(List* list) {
 }
 
 //Iterates through the values stored in list, placing each into variable value which is of type type 
-#define List_for_each(list, value, type) for(rewind_List(list); List_has_next(list); (value) = (type)List_get_next())
+#define List_for_each(list, value, type) for(List_rewind(list); List_has_next(list); (value) = (type)List_get_next())
 
 #endif //LIST_H
