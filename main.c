@@ -20,4 +20,6 @@ int main(int argc, char* argv[]) {
     
     //tt_source = lexer_run(text_source);
     //tt_print(tt_source);
+	
+	return 0;
 }
