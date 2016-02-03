@@ -4,7 +4,7 @@
 int main(int argc, char* argv[]) {
     
     token_tree* tt_source;
-    text_source = "PRINT \"Hello, World!\""
+    text_source = "PRINT \"Hello, World!\"";
     
     if(!lexer_init()) {
         
