@@ -8,7 +8,7 @@ List* List_new(void) {
     if(!ret_list)
         return ret_list;
         
-    ret_list->root_item = (ListItem)0;
+    ret_list->root_item = (ListItem*)0;
     List_rewind(ret_list);
     
     return ret_list;
