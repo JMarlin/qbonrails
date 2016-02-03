@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
     if(!lexer_init()) {
         
         printf("Lexer initialization failed.\n");
-        return 1;
+        return 1; 
     }
     
     lexer_add_rule("literal_string", "\"(c*)\"");
