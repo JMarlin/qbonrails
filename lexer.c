@@ -15,11 +15,6 @@ token_tree* tt_add_child(token_tree* parent_root) {
     
 }
 
-typedef struct LexerRule {
-    char* name;
-    char* rule;
-} LexerRule;
-
 List* lexer_rules = (List*)0;
 
 int lexer_init() {
@@ -63,14 +58,14 @@ void lexer_print_rules(void) {
 token_tree* lexer_run(char* input_string) {
     
     //Create a new empty token tree
-    token_tree* output_tree = new_token_tree();
+    //token_tree* output_tree = new_token_tree();
     
     //Fail if we couldn't allocate the object
-    if(!output_tree)
-        return output_tree;
+    //if(!output_tree)
+    //    return output_tree;
         
     //Start trying to recursively match the content against the user's rules
-    lexer_match(input_string, output_tree);
+    //lexer_match(input_string, output_tree);
 }
 
 //Recursively attempts to pattern match on the user-defined grammar to produce a tree of matched tokens 
@@ -83,4 +78,6 @@ int lexer_match(char* input_string, token_tree* tree_root){
 
 //Takes an offset into a string to begin matching and the rule to match and returns the number of
 //characters in the match on success or a negative value on failure 
-int lexer_match_on_rule()
+int lexer_match_on_rule() {
+    
+}
