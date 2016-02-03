@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=*.c 
+SOURCES=$(*.c) 
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=qbonrails
 
