@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <memory.h>
+#include <stdlib.h>
 #include "list.h"
 #include "lexer.h"
 
@@ -20,7 +20,6 @@ List* lexer_rules = (List*)0;
 
 int lexer_init() {
     
-    LexerRule* rule;
     lexer_rules = List_new();
     
     if(!lexer_rules)
