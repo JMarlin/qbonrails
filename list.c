@@ -53,7 +53,7 @@ void* List_get_next(List* list) {
     void* ret_val;
     
     if(!list->current_item) 
-        return;
+        return (void*)0;
     
     ret_val = list->current_item->value;
     
