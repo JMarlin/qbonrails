@@ -20,11 +20,7 @@ List* List_new(void);
 void List_rewind(List* list);
 void* List_get_next(List* list);
 int List_add(List* list, void* value);
-
-inline int List_has_next(List* list) {
-    
-    return !!(list->current_item && list->current_item->next);
-}
+int List_has_next(List* list);
 
 //Iterates through the values stored in list, placing each into variable value which is of type type 
 #define List_for_each(list, value, type) for(List_rewind(list); List_has_next(list); (value) = (type)List_get_next(list))
