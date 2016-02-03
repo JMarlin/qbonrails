@@ -11,6 +11,24 @@ token_tree* tt_add_child(token_tree* parent_root) {
     
 }
 
+typedef struct LexerRule {
+    char* name;
+    char* rule;
+} LexerRule;
+
+int lexer_init() {
+    
+    LexerRule* rule;
+    List* lexer_rules = List_new();
+    
+    if(!lexer_rules)
+    
+    List_for_each(lexer_rules, rule, LexerRule*) {
+        
+        rule->
+    }
+}
+
 token_tree* lexer_run(char* input_string) {
     
     //Create a new empty token tree
