@@ -23,6 +23,6 @@ int List_add(List* list, void* value);
 int List_has_next(List* list);
 
 //Iterates through the values stored in list, placing each into variable value which is of type type 
-#define List_for_each(list, value, type) for(List_rewind(list); ((value) = (type)List_get_next(list)), List_has_next(list); )
+#define List_for_each(list, value, type) for(List_rewind(list); ((value) = (type)List_get_next(list)); )
 
 #endif //LIST_H

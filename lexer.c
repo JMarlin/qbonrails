@@ -36,15 +36,17 @@ int lexer_add_rule(char* name, char* rule) {
     new_rule->name = name;
     new_rule->rule = rule;
     
-    return List_add(lexer_rules, new_rule);
+    return List_add(lexer_rules, (void*)new_rule);
 }
 
 void lexer_print_rules(void) {
     
     LexerRule* rule;
     
-    List_for_each(lexer_rules, rule, LexerRule*)
+    List_for_each(lexer_rules, rule, LexerRule*) {
+            
         printf("lexer_rules['%s']: %s\n", rule->name, rule->rule);
+    }
 }
 
 token_tree* lexer_run(char* input_string) {

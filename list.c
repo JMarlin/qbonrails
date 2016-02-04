@@ -57,7 +57,7 @@ void* List_get_next(List* list) {
     
     ret_val = list->current_item->value;
     
-    if(list->current_item->next)
+    if(list->current_item)
         list->current_item = list->current_item->next;
         
     return ret_val;
@@ -65,5 +65,5 @@ void* List_get_next(List* list) {
 
 int List_has_next(List* list) {
     
-    return !!(list->current_item && list->current_item->next);
+    return !!(list->current_item);
 }
