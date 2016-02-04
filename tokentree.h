@@ -10,7 +10,7 @@ typedef struct TokenTree {
 
 TokenTree* TokenTree_new(char* new_type, char* new_value);
 void TokenTree_delete(TokenTree* token_tree);
-TokenTree* TokenTree_add_child(TokenTree* root);
+TokenTree* TokenTree_add_child(TokenTree* root, char* new_type, char* new_value);
 void TokenTree_print(TokenTree* token_tree);
 
 #endif //TOKENTREE_H
