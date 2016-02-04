@@ -32,7 +32,7 @@ TokenTree* TokenTree_new(char* new_type, char* new_value) {
 	
 	//Clone rule type string 
 	if(new_type)	
-		if(!(new_tree->type = strclone(new_type)) {
+		if(!(new_tree->type = strclone(new_type))) {
 			
 			TokenTree_delete(new_tree);
 			return (TokenTree*)0;
