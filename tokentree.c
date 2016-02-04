@@ -40,14 +40,14 @@ TokenTree* TokenTree_new(char* new_type, char* new_value) {
 	
 	//Clone rule value string  	
 	if(new_value)
-		if(!(new_tree->value = strclone(new_value)) {
+		if(!(new_tree->value = strclone(new_value))) {
 			
 			TokenTree_delete(new_tree);
 			return (TokenTree*)0;
 		}
 	
 	//Create a new list for the child trees
-	if(!(new_tree->children = List_new()) {
+	if(!(new_tree->children = List_new())) {
 		
 		TokenTree_delete(new_tree);
 		return (TokenTree*)0;
