@@ -16,7 +16,10 @@ typedef struct List {
     ListItem* current_item;
 } List; 
 
+typedef void (deleter*)(void* value);
+
 List* List_new(void);
+void List_delete(List* list);
 void List_rewind(List* list);
 void* List_get_next(List* list);
 int List_add(List* list, void* value);

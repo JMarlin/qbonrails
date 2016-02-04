@@ -14,6 +14,38 @@ List* List_new(void) {
     return ret_list;
 }
 
+//Deletes all elements of the list, and deletes the contained values
+//using the passed delete function
+void List_delete(List* list, deleter del_func) {
+	
+	ListItem* current_item = list->root_item;
+	ListItem* prev_item;
+	
+	if(current_item) {
+		
+		//Fast forward to the end of the list
+		while(current_item->next)
+		    current_item = current_item->next;
+			
+	    //Delete in reverse order
+		while(current_item) {
+		
+		    //Temporarily store the previous element so that we don't lose it
+		    prev_item = current_item->prev;
+			
+			//Use the supplied deleter to delete the lite item's value 
+			del_func(current_item->value);
+			
+			//Finally, get rid of the current ListItem and move back down the list
+			free((void*)current_item);
+			current_item = prev_item;    	
+		}
+	}
+	
+	//Now that we've deleted all of the content, we can free the root object
+	free((void*)list);
+}
+
 void List_rewind(List* list) {
     
     list->current_item = list->root_item;

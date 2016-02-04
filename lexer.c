@@ -3,12 +3,6 @@
 #include "list.h"
 #include "lexer.h"
 
-//Given a parent, allocates, attaches and returns a new child
-token_tree* tt_add_child(token_tree* parent_root) {
-    
-	return (token_tree*)0;
-}
-
 List* lexer_rules = (List*)0;
 
 int lexer_init() {
@@ -52,7 +46,7 @@ void lexer_print_rules(void) {
 token_tree* lexer_run(char* input_string) {
     
     //Create a new empty token tree
-    //token_tree* output_tree = new_token_tree();
+    token_tree* output_tree = TokenTree_new();
     
     //Fail if we couldn't allocate the object
     //if(!output_tree)
