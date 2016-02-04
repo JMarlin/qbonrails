@@ -129,5 +129,5 @@ void TokenTree_print_at_level(TokenTree* token_tree, int level) {
 
 void TokenTree_print(TokenTree* token_tree) {
 	
-	TokenTree_print_at_level(TokenTree* token_tree, 0);
+	TokenTree_print_at_level(token_tree, 0);
 }
