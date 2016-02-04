@@ -112,9 +112,12 @@ void TokenTree_print_at_level(TokenTree* token_tree, int level) {
 	    printf("| ");
     
 	//Print the type and value of the tree node
-	printf("|-%s with ", token_tree->type);
+	if(token_tree->type)
+	    printf("|-%s with ", token_tree->type);
+	else 
+	    printf("|-no type with ");
 	
-	if(!strlen(token_tree->value))
+	if(!token_tree->value || !strlen(token_tree->value))
 	    printf("no value\n");
     else
 	    printf("value '%s'\n", token_tree->value);
