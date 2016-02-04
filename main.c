@@ -13,8 +13,11 @@ int main(int argc, char* argv[]) {
     }
     
     lexer_add_rule("literal_string", "\"(c*)\"");
+    lexer_print_rules();
     lexer_add_rule("literal", "[literal_string]");
+    lexer_print_rules();
     lexer_add_rule("print_statement", "PRINT(w*)[literal](w*)");
+    lexer_print_rules();
     lexer_add_rule("statement", "[print_statement]");
     lexer_print_rules();
     
