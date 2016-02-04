@@ -43,7 +43,7 @@ void lexer_print_rules(void) {
     }
 }
 
-token_tree* lexer_run(char* input_string) {
+TokenTree* lexer_run(char* input_string) {
     
     //Create a new empty token tree
     TokenTree* output_tree = TokenTree_new("document", (char*)0);
