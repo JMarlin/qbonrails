@@ -50,8 +50,6 @@ token_tree* lexer_run(char* input_string) {
     
 	if(!output_tree)
 	    return output_tree;
-		
-    TokenTree_add output_tree
 	
     //Fail if we couldn't allocate the object
     //if(!output_tree)
@@ -60,7 +58,7 @@ token_tree* lexer_run(char* input_string) {
     //Start trying to recursively match the content against the user's rules
     //lexer_match(input_string, output_tree);
 	
-	return (token_tree*)0;
+	return output_tree;
 }
 
 //Recursively attempts to pattern match on the user-defined grammar to produce a tree of matched tokens 
