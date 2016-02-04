@@ -16,7 +16,7 @@ typedef struct List {
     ListItem* current_item;
 } List; 
 
-typedef void (deleter*)(void* value);
+typedef void (*deleter)(void* value);
 
 List* List_new(void);
 void List_delete(List* list);
