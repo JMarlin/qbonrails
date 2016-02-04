@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "list.h"
 #include "lexer.h"
+#include "tokentree.h"
 
 List* lexer_rules = (List*)0;
 
@@ -65,7 +66,7 @@ TokenTree* lexer_run(char* input_string) {
 //Takes a pointer into the string to be matched and the parent node that any matches will be hung off of 
 //As it matches, it calls itself as soon as it reads a sub-rule name and passes itself the parsed string
 //
-int lexer_match(char* input_string, token_tree* tree_root){
+int lexer_match(char* input_string, TokenTree* tree_root){
     
 	return 0;
 }
