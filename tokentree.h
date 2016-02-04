@@ -8,7 +8,7 @@ typedef struct TokenTree {
     struct List* children;
 } TokenTree;
 
-TokenTree* TokenTree_new();
+TokenTree* TokenTree_new(char* new_type, char* new_value);
 TokenTree_delete(TokenTree* token_tree);
 TokenTree* TokenTree_add_child(TokenTree* root);
 TokenTree_print(TokenTree* token_tree);

@@ -46,8 +46,13 @@ void lexer_print_rules(void) {
 token_tree* lexer_run(char* input_string) {
     
     //Create a new empty token tree
-    token_tree* output_tree = TokenTree_new();
+    TokenTree* output_tree = TokenTree_new("document", (char*)0);
     
+	if(!output_tree)
+	    return output_tree;
+		
+    TokenTree_add output_tree
+	
     //Fail if we couldn't allocate the object
     //if(!output_tree)
     //    return output_tree;

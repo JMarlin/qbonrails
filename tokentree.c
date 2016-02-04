@@ -17,7 +17,7 @@ char* strclone(char* input) {
 	return retstr;
 }
 
-TokenTree* TokenTree_new() {
+TokenTree* TokenTree_new(char* new_type, char* new_value) {
 	
     TokenTree* new_tree = (TokenTree*)malloc(sizeof(TokenTree));
 	
@@ -30,19 +30,21 @@ TokenTree* TokenTree_new() {
 	new_tree->parent = (TokenTree*)0;
 	new_tree->children = (List*)0;
 	
-	//Clone rule type string 	
-	if(!(new_tree->type = strclone(new_type)) {
-		
-		TokenTree_delete(new_tree);
-		return (TokenTree*)0;
-	}
+	//Clone rule type string 
+	if(new_type)	
+		if(!(new_tree->type = strclone(new_type)) {
+			
+			TokenTree_delete(new_tree);
+			return (TokenTree*)0;
+		}
 	
 	//Clone rule value string  	
-	if(!(new_tree->value = strclone(new_value)) {
-		
-		TokenTree_delete(new_tree);
-		return (TokenTree*)0;
-	}
+	if(new_value)
+		if(!(new_tree->value = strclone(new_value)) {
+			
+			TokenTree_delete(new_tree);
+			return (TokenTree*)0;
+		}
 	
 	//Create a new list for the child trees
 	if(!(new_tree->children = List_new()) {
@@ -77,7 +79,7 @@ void TokenTree_deleter(void* value) {
 //Given a parent, allocates, attaches and returns a new child
 TokenTree* TokenTree_add_child(TokenTree* root, char* new_type, char* new_value) {
 	
-    TokenTree* new_tree = TokenTree_new();
+    TokenTree* new_tree = TokenTree_new(new_type, new_value);
 	
 	if(!new_tree)
 	    return new_tree;
