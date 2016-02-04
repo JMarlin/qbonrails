@@ -10,7 +10,7 @@ char* strclone(char* input) {
 	char* retstr = (char*)malloc(strlen(input) + 1);
 	
 	if(!retstr)
-	    retstr;
+	    return retstr;
 		
 	strcpy(retstr, input);
 	

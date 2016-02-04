@@ -4,7 +4,7 @@
 typedef struct TokenTree {
     char* type;            //The rule that was matched to make this node 
     char* value;                //The actual characters matched 
-    struct token_tree* parent;    
+    struct TokenTree* parent;    
     struct List* children;
 } TokenTree;
 
