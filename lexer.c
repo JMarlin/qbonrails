@@ -52,6 +52,12 @@ TokenTree* lexer_run(char* input_string) {
 	if(!output_tree)
 	    return output_tree;
 	
+	TokenTree* exp = TokenTree_add_child(output_tree, "expression", (char*)0);
+	TokenTree* key = TokenTree_add_child(exp, "keyword", "PRINT");
+	TokenTree_add_child(key, "immediate_string", "Hello, world!");
+	exp = TokenTree_add_child(output_tree, "expression", (char*)0);
+	TokenTree_add_child(exp, "keyword", "END");	
+	
     //Fail if we couldn't allocate the object
     //if(!output_tree)
     //    return output_tree;
