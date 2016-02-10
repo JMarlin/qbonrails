@@ -3,6 +3,7 @@
 #include "list.h"
 #include "lexer.h"
 #include "tokentree.h"
+#include "regex.h"
 
 List* lexer_rules = (List*)0;
 
@@ -52,9 +53,10 @@ TokenTree* lexer_run(char* input_string) {
 	if(!output_tree)
 	    return output_tree;
 	
-	TokenTree* exp = TokenTree_add_child(output_tree, "print_statement", (char*)0);
-	TokenTree_add_child(exp, "immediate_string", "Hello, world!");
-	
+    List_for_each(lexer_rules, rule, LexerRule*) {
+        if(regex_match(input_string, rule->rule))
+            break;
+    
     //Fail if we couldn't allocate the object
     //if(!output_tree)
     //    return output_tree;
