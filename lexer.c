@@ -47,13 +47,15 @@ void lexer_print_rules(void) {
 
 TokenTree* lexer_run(char* input_string) {
     
+    LexerRule* rule;
+    
     //Create a new empty token tree
     TokenTree* output_tree = TokenTree_new("statement", (char*)0);
     
 	if(!output_tree)
 	    return output_tree;
 	
-    List_for_each(lexer_rules, rule, LexerRule*) {
+    List_for_each(lexer_rules, rule, LexerRule*) 
         if(regex_match(input_string, rule->rule))
             break;
     
